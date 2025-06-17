@@ -21,9 +21,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="el">
-      <body className={inter.className}></body>
-      <Navbar />
-      <main>{children}</main>
+      <body className={inter.className}>
+        <Navbar />
+        <main>{children}</main>
+      </body>
     </html>
   );
 }

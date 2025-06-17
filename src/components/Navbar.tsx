@@ -31,7 +31,7 @@ const navigation = [
     ],
   },
   { name: "Σχετικά με μας", href: "/sxetika-me-mas" },
-  { name: "FAQ", href: "/faq" },
+  { name: "Συχνές Ερωτήσεις", href: "/syxnes-erotiseis" },
   { name: "Επικοινωνία", href: "/epikoinonia" },
 ];
 
