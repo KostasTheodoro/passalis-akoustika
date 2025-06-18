@@ -59,7 +59,7 @@ export default function Navbar() {
     <Disclosure as="nav" className="bg-white border-b sticky top-0 z-50">
       {({ open, close }) => (
         <>
-          <div className="lg:px-16 px-4 flex h-16 items-center  gap-2">
+          <div className="mx-auto max-w-[1980px] px-4  flex h-20 items-center  gap-2">
             {/* Mobile menu button */}
             <div className="flex lg:hidden">
               <DisclosureButton className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:text-primary hover:bg-gray-100 focus:outline-none">
@@ -76,9 +76,9 @@ export default function Navbar() {
               <Image
                 src="/logo1.svg"
                 alt="Passalis Akoustika Logo"
-                width={55}
-                height={55}
-                className="h-15 w-auto"
+                width={65}
+                height={65}
+                className="h-19 w-auto "
                 priority
               />
             </Link>
@@ -164,7 +164,7 @@ export default function Navbar() {
               </span>
               <span className="flex items-center gap-1 text-gray-500 text-sm">
                 <MapPinIcon className="h-5 w-5" aria-hidden="true" />
-                Δολιανής 74, Leof. Kifisias 127, Marousi 151 24
+                Δολιανής 74, Leof. Kifisias 127
               </span>
             </div>
           </div>
