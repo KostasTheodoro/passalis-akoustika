@@ -83,7 +83,7 @@ export default function Navbar() {
               />
             </Link>
             {/* Desktop nav */}
-            <div className="hidden lg:flex flex-1 items-center justify-center space-x-8">
+            <div className="hidden  lg:flex flex-1 items-center justify-center space-x-8">
               {navigation.map((item) =>
                 item.dropdown ? (
                   <div
@@ -114,7 +114,7 @@ export default function Navbar() {
                       >
                         <MenuItems
                           static
-                          className="absolute left-0 mt-2 w-64 origin-top-left rounded-md bg-white shadow-lg ring-1 ring-black/5 focus:outline-none z-50"
+                          className="absolute  left-0 mt-2 w-64 origin-top-left rounded-md bg-white shadow-lg ring-1 ring-black/5 focus:outline-none z-50"
                         >
                           <div className="py-1">
                             {item.dropdown.map((drop) => (
@@ -126,7 +126,7 @@ export default function Navbar() {
                                   classNames(
                                     active
                                       ? "bg-gray-100 text-primary"
-                                      : "text-gray-700",
+                                      : "text-gray-700 hover:text-primary ",
                                     "block px-4 py-2 text-sm"
                                   )
                                 }
