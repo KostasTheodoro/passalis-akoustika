@@ -61,9 +61,9 @@ export default function Epikoinonia() {
         </div>
       </div>
       {/* Map Section */}
-      <section className="pt-12 flex justify-center">
+      <section className="py-36 flex justify-center">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3121.222219743111!2d23.793853315374543!3d38.05032737971232!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a199b5d1e76e1f%3A0x2baf24eb3c5b1f8a!2sLeof.%20Kifisias%20127%2C%20Marousi%20151%2024!5e0!3m2!1sel!2sgr!4v1718888888888!5m2!1sel!2sgr"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3121.087441868825!2d23.80464681537398!3d38.04830817971486!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a19968f09ee0db%3A0x121536f50b8e6e2a!2zzpHOtc67zqzOsM6xz4nOvyDigJggzprOkc6vzr_Ou867zqzOuc69IM6izpHOv8-BzrXOhM-BzrUgzpTOv8-Bzr3Okc6xz4nPhSDOkM6hIM6UzrjOtc67zq_Ou867!5e0!3m2!1sel!2sgr!4v1718802598390!5m2!1sel!2sgr"
           width="100%"
           height="340"
           style={{ border: 0, maxWidth: 640 }}

@@ -158,14 +158,22 @@ export default function Navbar() {
             </div>
             {/* Contact Info row with icons */}
             <div className="hidden lg:flex items-center gap-4  ">
-              <span className="flex items-center gap-1 text-primary font-bold">
+              <a
+                href="tel:2106129896"
+                className="flex items-center gap-1 text-brandgray font-bold hover:text-primary no-underline  transition"
+              >
                 <PhoneIcon className="h-5 w-5" aria-hidden="true" />
                 210 612 9896
-              </span>
-              <span className="flex items-center gap-1 text-gray-500 text-sm">
+              </a>
+              <a
+                href="https://www.google.com/maps/place/%CE%A0%CE%91%CE%A3%CE%A3%CE%91%CE%9B%CE%97%CE%A3+%CE%97.+-+%CE%91%CE%9A%CE%9F%CE%A5%CE%A3%CE%A4%CE%99%CE%9A%CE%91+%CE%92%CE%91%CE%A1%CE%97%CE%9A%CE%9F%CE%AA%CE%91%CE%A3/@38.0483082,23.807228,17z/data=!3m1!4b1!4m6!3m5!1s0x14a19968f09ee0db:0x121536f50b8e6e2a!8m2!3d38.0483082!4d23.807228!16s%2Fg%2F11xdw04xv9?entry=ttu&g_ep=EgoyMDI1MDYxNS4wIKXMDSoASAFQAw%3D%3D"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1 text-brandgray font-bold no-underline hover:text-primary transition"
+              >
                 <MapPinIcon className="h-5 w-5" aria-hidden="true" />
                 Δολιανής 74, Leof. Kifisias 127
-              </span>
+              </a>
             </div>
           </div>
           {/* Mobile Panel */}
@@ -233,12 +241,22 @@ export default function Navbar() {
                 )}
               </div>
               <div className="mt-4 px-4 py-2 border-t">
-                <span className="block font-bold text-primary mb-1">
+                <a
+                  href="tel:2106129896"
+                  className="block font-bold text-primary mb-1 hover:underline"
+                >
+                  <PhoneIcon className="h-5 w-5" aria-hidden="true" />
                   210 612 9896
-                </span>
-                <span className="block text-xs text-gray-500">
+                </a>
+                <a
+                  href="https://www.google.com/maps/place/%CE%A0%CE%91%CE%A3%CE%A3%CE%91%CE%9B%CE%97%CE%A3+%CE%97.+-+%CE%91%CE%9A%CE%9F%CE%A5%CE%A3%CE%A4%CE%99%CE%9A%CE%91+%CE%92%CE%91%CE%A1%CE%97%CE%9A%CE%9F%CE%AA%CE%91%CE%A3/@38.0483082,23.807228,17z/data=!3m1!4b1!4m6!3m5!1s0x14a19968f09ee0db:0x121536f50b8e6e2a!8m2!3d38.0483082!4d23.807228!16s%2Fg%2F11xdw04xv9?entry=ttu&g_ep=EgoyMDI1MDYxNS4wIKXMDSoASAFQAw%3D%3D"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block text-xs text-gray-500 hover:underline"
+                >
+                  <MapPinIcon className="h-5 w-5" aria-hidden="true" />
                   Δολιανής 74, Leof. Kifisias 127, Marousi 151 24
-                </span>
+                </a>
               </div>
             </DisclosurePanel>
           </Transition>
