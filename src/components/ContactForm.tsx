@@ -65,6 +65,7 @@ export default function ContactForm() {
         });
       }
     } catch (error) {
+      console.error("Error submitting contact form:", error);
       setStatus({
         message: "Παρακαλώ συμπληρώστε όλα τα υποχρεωτικά πεδία.",
         icon: <FaCircleXmark className="text-red-500 text-2xl" />,
