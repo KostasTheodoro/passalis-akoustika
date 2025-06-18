@@ -59,10 +59,10 @@ export default function Navbar() {
     <Disclosure as="nav" className="bg-white border-b sticky top-0 z-50">
       {({ open, close }) => (
         <>
-          <div className="mx-auto max-w-7xl px-4 flex h-16 items-center justify-between">
+          <div className="lg:px-16 px-4 flex h-16 items-center  gap-2">
             {/* Mobile menu button */}
             <div className="flex lg:hidden">
-              <DisclosureButton className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:text-blue-700 hover:bg-gray-100 focus:outline-none">
+              <DisclosureButton className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:text-primary hover:bg-gray-100 focus:outline-none">
                 <span className="sr-only">Open main menu</span>
                 {open ? (
                   <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
@@ -72,7 +72,7 @@ export default function Navbar() {
               </DisclosureButton>
             </div>
             {/* Logo */}
-            <Link href="/" className="flex items-center">
+            <Link href="/" className="flex  items-center  ">
               <Image
                 src="/logo1.svg"
                 alt="Passalis Akoustika Logo"
@@ -95,8 +95,8 @@ export default function Navbar() {
                     <Menu as="div">
                       <MenuButton
                         className={classNames(
-                          "inline-flex items-center font-medium text-gray-700 hover:text-blue-700 transition",
-                          pathname?.startsWith(item.href) ? "text-blue-700" : ""
+                          "inline-flex items-center font-medium text-gray-700 hover:text-primary transition",
+                          pathname?.startsWith(item.href) ? "text-primary" : ""
                         )}
                         aria-expanded={isSynergatesOpen}
                       >
@@ -125,7 +125,7 @@ export default function Navbar() {
                                 className={({ active }) =>
                                   classNames(
                                     active
-                                      ? "bg-gray-100 text-blue-700"
+                                      ? "bg-gray-100 text-primary"
                                       : "text-gray-700",
                                     "block px-4 py-2 text-sm"
                                   )
@@ -145,8 +145,10 @@ export default function Navbar() {
                     key={item.href}
                     href={item.href}
                     className={classNames(
-                      "font-medium text-gray-700 hover:text-blue-700 transition",
-                      pathname === item.href ? "text-blue-700" : ""
+                      "font-medium text-gray-700 transition relative px-2 py-1",
+                      pathname === item.href
+                        ? "text-primary border-b-2 border-primary"
+                        : "hover:text-primary hover:border-b-2 hover:border-primary"
                     )}
                   >
                     {item.name}
@@ -155,14 +157,14 @@ export default function Navbar() {
               )}
             </div>
             {/* Contact Info row with icons */}
-            <div className="hidden lg:flex items-center gap-6 min-w-fit ml-6">
-              <span className="flex items-center gap-1 text-blue-700 font-bold">
+            <div className="hidden lg:flex items-center gap-4  ">
+              <span className="flex items-center gap-1 text-primary font-bold">
                 <PhoneIcon className="h-5 w-5" aria-hidden="true" />
-                2310 123 456
+                210 612 9896
               </span>
               <span className="flex items-center gap-1 text-gray-500 text-sm">
                 <MapPinIcon className="h-5 w-5" aria-hidden="true" />
-                Βασ. Όλγας 123, Θεσσαλονίκη
+                Δολιανής 74, Leof. Kifisias 127, Marousi 151 24
               </span>
             </div>
           </div>
@@ -181,14 +183,14 @@ export default function Navbar() {
               <div className="px-4 pt-5 pb-2 flex justify-between items-center border-b">
                 <Link href="/" onClick={() => close()}>
                   <Image
-                    src="/logo.png"
+                    src="/logo1.svg"
                     alt="Passalis Akoustika Logo"
                     width={48}
                     height={48}
                     className="h-10 w-auto"
                   />
                 </Link>
-                <DisclosureButton className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:text-blue-700 hover:bg-gray-100 focus:outline-none">
+                <DisclosureButton className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:text-primary hover:bg-gray-100 focus:outline-none">
                   <span className="sr-only">Close menu</span>
                   <XMarkIcon className="h-6 w-6" aria-hidden="true" />
                 </DisclosureButton>
@@ -200,7 +202,7 @@ export default function Navbar() {
                       <DisclosureButton
                         as={Link}
                         href={item.href}
-                        className="block rounded-md px-3 py-2 text-base font-medium text-gray-900 hover:text-blue-700"
+                        className="block rounded-md px-3 py-2 text-base font-medium text-gray-900 hover:text-primary"
                         onClick={() => close()}
                       >
                         {item.name} (Όλα)
@@ -210,7 +212,7 @@ export default function Navbar() {
                           as={Link}
                           href={drop.href}
                           key={drop.href}
-                          className="block rounded-md px-6 py-2 text-base font-medium text-gray-700 hover:text-blue-700"
+                          className="block rounded-md px-6 py-2 text-base font-medium text-gray-700 hover:text-primary"
                           onClick={() => close()}
                         >
                           {drop.name}
@@ -222,7 +224,7 @@ export default function Navbar() {
                       as={Link}
                       key={item.href}
                       href={item.href}
-                      className="block rounded-md px-3 py-2 text-base font-medium text-gray-900 hover:text-blue-700"
+                      className="block rounded-md px-3 py-2 text-base font-medium text-gray-900 hover:text-primary"
                       onClick={() => close()}
                     >
                       {item.name}
@@ -231,11 +233,11 @@ export default function Navbar() {
                 )}
               </div>
               <div className="mt-4 px-4 py-2 border-t">
-                <span className="block font-bold text-blue-700 mb-1">
-                  2310 123 456
+                <span className="block font-bold text-primary mb-1">
+                  210 612 9896
                 </span>
                 <span className="block text-xs text-gray-500">
-                  Βασ. Όλγας 123, Θεσσαλονίκη
+                  Δολιανής 74, Leof. Kifisias 127, Marousi 151 24
                 </span>
               </div>
             </DisclosurePanel>
