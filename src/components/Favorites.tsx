@@ -9,7 +9,7 @@ export function Favorites() {
 
   return (
     <section className="mx-auto max-w-7xl px-4 py-16">
-      <h2 className="text-2xl font-semibold text-primary mb-8 text-center">
+      <h2 className="text-3xl font-extrabold text-primary text-center mb-8">
         Τα ακουστικά μας
       </h2>
       <div className="grid grid-cols-2 gap-4 mb-8">
