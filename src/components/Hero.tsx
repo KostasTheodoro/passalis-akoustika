@@ -1,5 +1,4 @@
 import Link from "next/link";
-
 export function Hero() {
   return (
     <section
@@ -16,15 +15,15 @@ export function Hero() {
       {/* content */}
       <div className="relative z-10 px-4">
         <h1 className="text-4xl font-extrabold text-white mb-4">
-          Καλωσήρθατε στα ακουστικά Πασσαλής
+          Καλωσήρθατε στο Πασσαλής ακουστικά βαρηκοΐας
         </h1>
         <p className="text-lg text-gray-200 mb-6">
-          Ειμαστέ εδω για να σας δώσουμε την καλύτερη εμπειρία στα ακουστικά
-          βαρηκοΐας
+          Είμαστε εδώ για να σας βοηθήσουμε με όλες τις απορίες σας για τα
+          ακουστικά βαρηκοΐας
         </p>
         <Link
           href="/syxnes-erotiseis"
-          className="inline-block bg-primary text-white font-medium py-2 px-6 rounded-lg hover:bg-primary-dark transition"
+          className="inline-block border-2 border-primary bg-primary text-white font-semibold px-8 py-3 rounded-full transition-colors duration-200 hover:bg-white hover:text-primary"
         >
           Συχνές Ερωτήσεις
         </Link>

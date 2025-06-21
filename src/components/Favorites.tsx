@@ -1,5 +1,4 @@
 import Link from "next/link";
-
 export function Favorites() {
   const images = [
     "https://picsum.photos/seed/1/300/200",
@@ -27,7 +26,7 @@ export function Favorites() {
       <div className="flex justify-center">
         <Link
           href="/akoustika"
-          className="inline-block bg-primary text-white font-medium py-2 px-6 rounded-lg hover:bg-primary-dark transition"
+          className="inline-block border-2 border-primary bg-primary text-white font-semibold px-8 py-3 rounded-full transition-colors duration-200 hover:bg-white hover:text-primary"
         >
           Δείτε όλα τα ακουστικά
         </Link>
