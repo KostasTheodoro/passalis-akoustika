@@ -172,7 +172,7 @@ export default function Navbar() {
                 className="flex items-center gap-1 text-brandgray font-bold no-underline hover:text-primary transition"
               >
                 <MapPinIcon className="h-5 w-5" aria-hidden="true" />
-                Δολιανής 74, Leof. Kifisias 127
+                Δολιανής 74, Λεωφ. Κηφισίας 127
               </a>
             </div>
           </div>
@@ -255,7 +255,7 @@ export default function Navbar() {
                   className="block text-xs text-gray-500 hover:underline"
                 >
                   <MapPinIcon className="h-5 w-5" aria-hidden="true" />
-                  Δολιανής 74, Leof. Kifisias 127, Marousi 151 24
+                  Δολιανής 74, Λεωφ. Κηφισίας 127, Μαρούσι 151 24
                 </a>
               </div>
             </DisclosurePanel>

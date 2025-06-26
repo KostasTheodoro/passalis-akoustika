@@ -29,8 +29,8 @@ export default function Epikoinonia() {
             <div className="flex items-center gap-3">
               <MapPinIcon className="h-6 w-6 text-primary" aria-hidden="true" />
               <span className="text-brandgray">
-                Δολιανής 74, Leof. Kifisias 127,
-                <br /> Marousi 151 24
+                Δολιανής 74, Λεωφ. Κηφισίας 127,
+                <br /> Μαρούσι 151 24
               </span>
             </div>
             <div className="flex items-center gap-3">
