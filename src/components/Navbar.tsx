@@ -59,7 +59,7 @@ export default function Navbar() {
     <Disclosure as="nav" className="bg-white border-b sticky top-0 z-50">
       {({ open, close }) => (
         <>
-          <div className="mx-auto max-w-[1980px] px-4  flex h-20 items-center  gap-2">
+          <div className="mx-auto max-w-[1980px] px-4  flex h-20 items-center justify-between lg:justify-start gap-2">
             {/* Mobile menu button */}
             <div className="flex lg:hidden">
               <DisclosureButton className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:text-primary hover:bg-gray-100 focus:outline-none">
@@ -72,7 +72,7 @@ export default function Navbar() {
               </DisclosureButton>
             </div>
             {/* Logo */}
-            <Link href="/" className="flex  items-center  ">
+            <Link href="/" className="flex items-center  ">
               <Image
                 src="/logo1.svg"
                 alt="Passalis Akoustika Logo"
@@ -82,6 +82,7 @@ export default function Navbar() {
                 priority
               />
             </Link>
+            <div className="w-10 lg:hidden" aria-hidden="true" />
             {/* Desktop nav */}
             <div className="hidden  lg:flex flex-1 items-center justify-center space-x-8">
               {navigation.map((item) =>
