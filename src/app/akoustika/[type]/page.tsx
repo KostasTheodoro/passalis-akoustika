@@ -1,7 +1,8 @@
+// src/app/akoustika/[type]/page.tsx
+
 import { hearingAidModels } from "@/data/hearingAids";
 import { HearingAidModelCard } from "@/components/HearingAidModelCard";
 
-// Mapping type to Greek name and code
 const typeNames: Record<string, { greek: string; latin: string }> = {
   cic: { greek: "Ενδοκαναλικά", latin: "CIC" },
   ric: { greek: "Ανοιχτής Εφαρμογής", latin: "RIC" },
@@ -9,6 +10,7 @@ const typeNames: Record<string, { greek: string; latin: string }> = {
   rechargeable: { greek: "Επαναφορτιζόμενα", latin: "Rechargeable" },
 };
 
+// No need to change your function, this is correct!
 export default function HearingAidTypePage({
   params,
 }: {
@@ -17,7 +19,6 @@ export default function HearingAidTypePage({
   const type = params.type;
   const models = hearingAidModels.filter((m) => m.type === type);
 
-  // Fallback if type does not exist
   if (!typeNames[type]) {
     return (
       <main className="py-10">
