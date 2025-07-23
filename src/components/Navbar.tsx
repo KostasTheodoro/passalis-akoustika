@@ -120,8 +120,12 @@ export default function Navbar() {
                         as={Link}
                         href={item.href}
                         className={classNames(
-                          "inline-flex items-center font-medium text-gray-700 hover:text-primary hover:border-b-2 hover:border-primary transition px-2",
-                          pathname === item.href ? "text-primary" : ""
+                          "inline-flex items-center font-medium transition px-2",
+                          pathname === item.href ||
+                            (item.name === "Ακουστικά" && isAkoustikaOpen) ||
+                            (item.name === "Συνεργάτες" && isSynergatesOpen)
+                            ? "text-primary border-b-2 border-primary"
+                            : "text-gray-700 hover:text-primary hover:border-b-2 hover:border-primary"
                         )}
                         aria-expanded={
                           item.name === "Ακουστικά"
