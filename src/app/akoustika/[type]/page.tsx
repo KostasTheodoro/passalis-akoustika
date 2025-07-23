@@ -1,5 +1,3 @@
-// src/app/akoustika/[type]/page.tsx
-
 import { hearingAidModels } from "@/data/hearingAids";
 import { HearingAidModelCard } from "@/components/HearingAidModelCard";
 
@@ -10,13 +8,12 @@ const typeNames: Record<string, { greek: string; latin: string }> = {
   rechargeable: { greek: "Επαναφορτιζόμενα", latin: "Rechargeable" },
 };
 
-// No need to change your function, this is correct!
-export default function HearingAidTypePage({
+export default async function HearingAidTypePage({
   params,
 }: {
-  params: { type: string };
+  params: Promise<{ type: string }>;
 }) {
-  const type = params.type;
+  const { type } = await params; // <--- await here!
   const models = hearingAidModels.filter((m) => m.type === type);
 
   if (!typeNames[type]) {
