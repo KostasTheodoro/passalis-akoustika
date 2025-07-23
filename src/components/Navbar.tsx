@@ -20,8 +20,15 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
+const hearingTypesDropdown = [
+  { name: "CIC – Ενδοκαναλικά", href: "/akoustika/cic" },
+  { name: "RIC – Ανοιχτής Εφαρμογής", href: "/akoustika/ric" },
+  { name: "BTE – Οπισθωτιαία", href: "/akoustika/bte" },
+  { name: "Επαναφορτιζόμενα", href: "/akoustika/rechargeable" },
+];
+
 const navigation = [
-  { name: "Ακουστικά", href: "/akoustika" },
+  { name: "Ακουστικά", href: "/akoustika", dropdown: hearingTypesDropdown },
   {
     name: "Συνεργάτες",
     href: "/synergates",
@@ -44,7 +51,9 @@ export default function Navbar() {
 
   // Hover logic for συνεργάτες
   const [isSynergatesOpen, setSynergatesOpen] = useState(false);
+  const [isAkoustikaOpen, setAkoustikaOpen] = useState(false);
   const synergatesTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const akoustikaTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const openSynergates = () => {
     if (synergatesTimeout.current) clearTimeout(synergatesTimeout.current);
@@ -53,6 +62,13 @@ export default function Navbar() {
 
   const closeSynergates = () => {
     synergatesTimeout.current = setTimeout(() => setSynergatesOpen(false), 100);
+  };
+  const openAkoustika = () => {
+    if (akoustikaTimeout.current) clearTimeout(akoustikaTimeout.current);
+    setAkoustikaOpen(true);
+  };
+  const closeAkoustika = () => {
+    akoustikaTimeout.current = setTimeout(() => setAkoustikaOpen(false), 100);
   };
 
   return (
@@ -89,8 +105,14 @@ export default function Navbar() {
                   <div
                     key={item.name}
                     className="relative"
-                    onMouseEnter={openSynergates}
-                    onMouseLeave={closeSynergates}
+                    onMouseEnter={
+                      item.name === "Ακουστικά" ? openAkoustika : openSynergates
+                    }
+                    onMouseLeave={
+                      item.name === "Ακουστικά"
+                        ? closeAkoustika
+                        : closeSynergates
+                    }
                   >
                     <Menu as="div">
                       <MenuButton
@@ -98,12 +120,20 @@ export default function Navbar() {
                           "inline-flex items-center font-medium text-gray-700 hover:text-primary transition",
                           pathname?.startsWith(item.href) ? "text-primary" : ""
                         )}
-                        aria-expanded={isSynergatesOpen}
+                        aria-expanded={
+                          item.name === "Ακουστικά"
+                            ? isAkoustikaOpen
+                            : isSynergatesOpen
+                        }
                       >
                         {item.name}
                       </MenuButton>
                       <Transition
-                        show={isSynergatesOpen}
+                        show={
+                          item.name === "Ακουστικά"
+                            ? isAkoustikaOpen
+                            : isSynergatesOpen
+                        }
                         as={Fragment}
                         enter="transition ease-out duration-100"
                         enterFrom="transform opacity-0 scale-95"
@@ -130,7 +160,11 @@ export default function Navbar() {
                                     "block px-4 py-2 text-sm"
                                   )
                                 }
-                                onClick={() => setSynergatesOpen(false)}
+                                onClick={() =>
+                                  item.name === "Ακουστικά"
+                                    ? setAkoustikaOpen(false)
+                                    : setSynergatesOpen(false)
+                                }
                               >
                                 {drop.name}
                               </MenuItem>
