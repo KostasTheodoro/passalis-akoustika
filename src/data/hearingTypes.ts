@@ -12,7 +12,7 @@ export const hearingTypes: HearingType[] = [
     description:
       "Τα ακουστικά CIC εφαρμόζουν βαθιά στον ακουστικό πόρο και είναι σχεδόν αόρατα, προσφέροντας διακριτική ενίσχυση ακοής με φυσικό ήχο.",
     image:
-      "https://5.imimg.com/data5/SELLER/Default/2023/6/319222286/RE/JL/FM/6841868/signia-prompt-itc-cic-custom-500x500.jpg", // placeholder image
+      "https://5.imimg.com/data5/SELLER/Default/2023/6/319222286/RE/JL/FM/6841868/signia-prompt-itc-cic-custom-500x500.jpg",
   },
   {
     slug: "ric",

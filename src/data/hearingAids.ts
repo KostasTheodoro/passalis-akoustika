@@ -58,7 +58,7 @@ export const hearingAidModels: HearingAidModel[] = [
     type: "ric",
     images: ["https://i.ebayimg.com/images/g/2zoAAOSwvFxgybsq/s-l1200.jpg"],
     description:
-      "RIC ακουστικό με λεπτό καλώδιο και ακουστικό μικρο-ηχείων στο κανάλι. Προηγμένα μικρόφωνα, σπίσιμο θορύβου, 6‑kanaλους, Signia App & TeleCare ready :contentReference[oaicite:1]{index=1}.",
+      "RIC ακουστικό με λεπτό καλώδιο και ακουστικό μικρο-ηχείων στο κανάλι. Προηγμένα μικρόφωνα, σπίσιμο θορύβου, 6‑kanaλους, Signia App & TeleCare ready ",
   },
   {
     id: "pure-312",
@@ -90,7 +90,7 @@ export const hearingAidModels: HearingAidModel[] = [
       "https://aanviihearing.com/image/cache/catalog/web/products/intuis/4.0SP/Intuis-SP-4_Beige-1000x1000.png",
     ],
     description:
-      "Νέα σειρά Intuis 4 με Bluetooth streaming, Signia Assistant, TeleCare, τηλε‑κουτσαβιο και αντίσταση IP68 :contentReference[oaicite:2]{index=2}.",
+      "Νέα σειρά Intuis 4 με Bluetooth streaming, Signia Assistant, TeleCare, τηλε‑κουτσαβιο και αντίσταση IP68 .",
   },
   {
     id: "intuis-3-s-m",
@@ -100,7 +100,7 @@ export const hearingAidModels: HearingAidModel[] = [
       "https://aanviihearing.com/image/cache/catalog/web/products/intuis/Aanvii-Hearing-Solutions-Intuis-3_S_beige_lt_1000x1000-1000x1000.jpg",
     ],
     description:
-      "Σειρά Intuis 3 BTE, με 6‑kanaλους MPO, τηλε‑πωλήσεις μέσω Signia app, directionality mic και αντοχή σε απαιτητικά περιβάλλοντα :contentReference[oaicite:3]{index=3}.",
+      "Σειρά Intuis 3 BTE, με 6‑kanaλους MPO, τηλε‑πωλήσεις μέσω Signia app, directionality mic και αντοχή σε απαιτητικά περιβάλλοντα .",
   },
 
   // --- Rechargeable ---
@@ -113,7 +113,7 @@ export const hearingAidModels: HearingAidModel[] = [
       "https://cdn.signia.net/-/media/signia/global/images/products/signia-ax/insio-chargego-ax/insio-ax_black_double_1000x1000.jpg?rev=f3d0df96f0594402930ba6e739588ccc&hash=9E03A1D2E0001A311A47DA9E7FA02CF5",
     ],
     description:
-      "Επαναφορτιζόμενο CIC/ΙΙC με Charge&Go βάση, έως 20 ώρες αυτονομία, Bluetooth και HD streaming από Signia NX πλατφόρμα :contentReference[oaicite:4]{index=4}.",
+      "Επαναφορτιζόμενο CIC/ΙΙC με Charge&Go βάση, έως 20 ώρες αυτονομία, Bluetooth και HD streaming από Signia NX πλατφόρμα ",
   },
   {
     id: "silk-charge-go",
