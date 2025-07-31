@@ -30,7 +30,7 @@ export function HearingTypeCard({ type }: { type: HearingType }) {
       <div className="w-full flex justify-center mt-18">
         <Link
           href={`/akoustika/${type.slug}`}
-          className="px-8 py-3 bg-primary text-white font-bold rounded-xl text-lg shadow hover:bg-primary/90 transition"
+          className="inline-block border-2 border-primary bg-primary text-white font-bold text-lg px-12 py-4 rounded-full transition-colors duration-200 hover:bg-white hover:text-primary"
         >
           Δείτε περισσότερα
         </Link>
