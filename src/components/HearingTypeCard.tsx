@@ -1,5 +1,6 @@
 import { HearingType } from "@/data/hearingTypes";
 import Link from "next/link";
+import Image from "next/image";
 
 export function HearingTypeCard({ type }: { type: HearingType }) {
   return (
@@ -9,13 +10,14 @@ export function HearingTypeCard({ type }: { type: HearingType }) {
       </h2>
 
       <div className="flex flex-col md:flex-row items-center w-full md:gap-8 mb-8">
-        <div className="flex justify-center md:justify-start w-full md:w-1/3 mb-6 md:mb-0">
-          <img
+        <div className="relative w-60 h-60 flex-shrink-0 mx-auto md:mx-0">
+          <Image
             src={type.image}
             alt={type.title}
-            width={190}
-            height={190}
-            className="rounded-xl object-cover shadow-md"
+            fill
+            className="rounded-xl object-contain bg-gray-100"
+            unoptimized
+            priority
           />
         </div>
         <div className="md:w-2/3 text-center md:text-left flex items-center">
@@ -25,7 +27,6 @@ export function HearingTypeCard({ type }: { type: HearingType }) {
         </div>
       </div>
 
-      {/* Button */}
       <div className="w-full flex justify-center mt-18">
         <Link
           href={`/akoustika/${type.slug}`}
