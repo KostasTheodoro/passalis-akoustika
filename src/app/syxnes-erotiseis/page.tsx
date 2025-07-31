@@ -47,8 +47,8 @@ const faqs = [
 export default function FAQPage() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   return (
-    <section className="max-w-3xl mx-auto py-16 px-4">
-      <h1 className="text-4xl font-bold text-center text-primary mb-8">
+    <section className="max-w-3xl mx-auto pt-16 pb-36 px-4 ">
+      <h1 className="text-4xl font-bold text-center text-primary mb-16">
         Συχνές Ερωτήσεις
       </h1>
       <dl>

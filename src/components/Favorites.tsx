@@ -30,14 +30,14 @@ export function Favorites() {
           <Link
             href={`/akoustika/${fav.type}`}
             key={fav.type}
-            className="overflow-hidden rounded-lg shadow-lg transition-transform hover:scale-105"
+            className="overflow-hidden rounded-lg shadow-lg transition-transform hover:scale-105  bg-white"
           >
             <Image
               src={fav.img}
               alt={fav.name}
               width={300}
               height={200}
-              className="w-full h-80 object-contain bg-white"
+              className="w-full h-80 object-contain"
               unoptimized
               priority
             />

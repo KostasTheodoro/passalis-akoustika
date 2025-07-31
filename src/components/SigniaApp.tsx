@@ -15,7 +15,7 @@ export function SigniaApp() {
         </div>
 
         <div className="flex-1 flex flex-col justify-between">
-          <h2 className="text-2xl md:text-3xl font-bold text-primary text-center md:text-left pb-8">
+          <h2 className="text-2xl md:text-3xl font-bold text-primary text-center md:text-left pb-12">
             Κατεβάστε το Signia App
           </h2>
           <div className="flex flex-col gap-4 h-full justify-center">

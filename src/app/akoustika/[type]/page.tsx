@@ -18,7 +18,7 @@ export default async function HearingAidTypePage({
 
   if (!typeNames[type]) {
     return (
-      <main className="py-10">
+      <main className="  bg-gray-50 py-10">
         <h1 className="text-3xl font-bold text-primary text-center mb-8">
           Δεν βρέθηκε αυτή η κατηγορία.
         </h1>
@@ -29,7 +29,7 @@ export default async function HearingAidTypePage({
   const { greek, latin } = typeNames[type];
 
   return (
-    <main className="py-10">
+    <main className="py-10  bg-gray-50 ">
       <h1 className="text-3xl font-bold text-primary text-center mb-8">
         {greek} ({latin})
       </h1>
