@@ -13,7 +13,7 @@ export const metadata = {
 
 export default function Epikoinonia() {
   return (
-    <div className="bg-light-bg min-h-screen py-16 px-2">
+    <div className=" min-h-screen py-16 px-2">
       <div className="mx-auto max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-8">
         {/* Info Section */}
         <div className="flex flex-col justify-center pr-0 lg:pr-8">

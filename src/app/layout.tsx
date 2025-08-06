@@ -24,7 +24,7 @@ export default function RootLayout({
     <html lang="el" className={inter.className}>
       <body>
         <Navbar />
-        <main>{children}</main>
+        <main className="bg-light-bg ">{children}</main>
         <Footer />
       </body>
     </html>

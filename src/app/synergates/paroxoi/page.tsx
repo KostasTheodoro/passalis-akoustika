@@ -60,7 +60,7 @@ const providers: Provider[] = [
 
 const Paroxoi: NextPage = () => {
   return (
-    <main className="min-h-screen bg-gray-50 py-14">
+    <main className="min-h-screen py-14">
       <div className="max-w-5xl mx-auto px-4">
         <h1 className="text-4xl md:text-5xl font-extrabold mb-14 text-center text-primary">
           Πάροχοι Βοηθημάτων Ακοής

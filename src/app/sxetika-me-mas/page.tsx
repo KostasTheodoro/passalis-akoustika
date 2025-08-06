@@ -1,6 +1,6 @@
 export default function AboutUs() {
   return (
-    <div className=" bg-gray-50 ">
+    <div>
       {/* Top section: Left text, right image grid */}
       <section className="mx-auto max-w-7xl px-4 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
