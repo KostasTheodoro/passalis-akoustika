@@ -2,13 +2,6 @@ import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import "./globals.css";
-import { Inter } from "next/font/google";
-
-const inter = Inter({
-  subsets: ["greek"],
-  display: "swap",
-  variable: "--font-inter",
-});
 
 export const metadata: Metadata = {
   title: "Ακουστικά Πασσαλής",
@@ -21,10 +14,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="el" className={inter.className}>
-      <body>
+    <html lang="el">
+      <body className="bg-light-bg">
         <Navbar />
-        <main className="bg-light-bg ">{children}</main>
+        <main>{children}</main>
         <Footer />
       </body>
     </html>

@@ -73,16 +73,7 @@ export const hearingAidModels: HearingAidModel[] = [
   },
 
   // --- BTE ---
-  {
-    id: "prompt-p-sp",
-    name: "Signia Prompt P/SP BTE",
-    type: "bte",
-    images: [
-      "https://слышувижу.рф/wp-content/uploads/2023/10/sluhovoj-apparat-siemens-xtm-p-p4.jpg",
-    ],
-    description:
-      "BTE με εκτενή ισχύ, αντοχή σε υγρασία/σκόνη, TeleCare, με βαρόμετρο και στιβαρή σχεδίαση για κάθε χρήση.",
-  },
+
   {
     id: "intuis-4-p-sp",
     name: "Signia Intuis 4.1 P/SP BTE",
@@ -92,6 +83,16 @@ export const hearingAidModels: HearingAidModel[] = [
     ],
     description:
       "Νέα σειρά Intuis 4 με Bluetooth streaming, Signia Assistant, TeleCare, τηλε‑κουτσαβιο και αντίσταση IP68 .",
+  },
+  {
+    id: "prompt-p-sp",
+    name: "Signia Prompt P/SP BTE",
+    type: "bte",
+    images: [
+      "https://слышувижу.рф/wp-content/uploads/2023/10/sluhovoj-apparat-siemens-xtm-p-p4.jpg",
+    ],
+    description:
+      "BTE με εκτενή ισχύ, αντοχή σε υγρασία/σκόνη, TeleCare, με βαρόμετρο και στιβαρή σχεδίαση για κάθε χρήση.",
   },
   {
     id: "intuis-3-s-m",

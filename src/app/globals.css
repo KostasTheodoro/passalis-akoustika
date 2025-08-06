@@ -5,9 +5,58 @@
   --color-brandgray: #444443;
   --color-brandlight: #7a7a7a;
   --color-light-bg: #f6f6f6;
+  --font-sansation: "Sansation", sans-serif;
 }
 
 body {
   color: var(--color-brandgray);
   background: white;
+  font-family: var(--font-sansation);
+}
+@font-face {
+  font-family: "Sansation";
+  src: url("/fonts/sansation/Sansation-LightItalic.woff2") format("woff2");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sansation";
+  src: url("/fonts/sansation/Sansation-Italic.woff2") format("woff2");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sansation";
+  src: url("/fonts/sansation/Sansation-Bold.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sansation";
+  src: url("/fonts/sansation/Sansation-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sansation";
+  src: url("/fonts/sansation/Sansation-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sansation";
+  src: url("/fonts/sansation/Sansation-BoldItalic.woff2") format("woff2");
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
 }

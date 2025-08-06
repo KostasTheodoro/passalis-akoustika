@@ -51,7 +51,7 @@ export default function Epikoinonia() {
                 href="mailto:info@passalis-akoustika.gr"
                 className="hover:text-primary text-brandgray transition-colors"
               >
-                info@passalis-akoustika.gr
+                akoustika.passalis@gmail.com
               </a>
             </div>
           </dl>

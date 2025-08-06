@@ -15,7 +15,7 @@ export function Hero() {
       {/* content */}
       <div className="relative z-10 px-4">
         <h1 className="text-4xl font-extrabold text-white mb-4">
-          Καλωσήρθατε στο Πασσαλής ακουστικά βαρηκοΐας
+          Καλωσήρθατε στα ακουστικά βαρηκοΐας Πασσαλής
         </h1>
         <p className="text-lg text-gray-200 mb-6">
           Είμαστε εδώ για να σας βοηθήσουμε με όλες τις απορίες σας για τα
