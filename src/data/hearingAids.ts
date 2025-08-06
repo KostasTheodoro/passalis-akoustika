@@ -10,16 +10,7 @@ export type HearingAidModel = {
 
 export const hearingAidModels: HearingAidModel[] = [
   // --- CIC ---
-  {
-    id: "intuis-cic",
-    name: "Signia Intuis CIC",
-    type: "cic",
-    images: [
-      "https://5.imimg.com/data5/SELLER/Default/2023/6/319222286/RE/JL/FM/6841868/signia-prompt-itc-cic-custom-500x500.jpg",
-    ],
-    description:
-      "Διακριτικό ενδοκαναλικό ακουστικό με 12‑kanaλους επεξεργαστές, έλεγχο θορύβου και δυνατότητα τηλερύθμισης μέσω Signia App, ιδανικό για μέτρια βαρηκοΐα.",
-  },
+
   {
     id: "insio-cic-mayro",
     name: "Signia Insio IX CIC (Μαύρο)",
@@ -29,6 +20,16 @@ export const hearingAidModels: HearingAidModel[] = [
     ],
     description:
       "Τα Signia Insio IX CIC προσφέρουν πλήρως εξατομικευμένη εφαρμογή, Binaural OneMic Directionality 2.0 για καθαρότητα στη φωνή και διακριτικότητα στην εμφάνιση.",
+  },
+  {
+    id: "intuis-cic",
+    name: "Signia Intuis CIC",
+    type: "cic",
+    images: [
+      "https://5.imimg.com/data5/SELLER/Default/2023/6/319222286/RE/JL/FM/6841868/signia-prompt-itc-cic-custom-500x500.jpg",
+    ],
+    description:
+      "Διακριτικό ενδοκαναλικό ακουστικό με 12‑kanaλους επεξεργαστές, έλεγχο θορύβου και δυνατότητα τηλερύθμισης μέσω Signia App, ιδανικό για μέτρια βαρηκοΐα.",
   },
   {
     id: "intuis-click-3",
@@ -104,6 +105,17 @@ export const hearingAidModels: HearingAidModel[] = [
   },
 
   // --- Rechargeable ---
+
+  {
+    id: "silk-charge-go",
+    name: "Signia Silk Charge&Go IX",
+    type: "rechargeable",
+    images: [
+      "https://aanviihearing.com/image/cache/catalog/web/products/silk/silk-charge-and-go-ix/silk-charge-and-go-ix-hearing-aids-800x800-2000x2000.png",
+    ],
+    description:
+      "Διακριτικό Silk CIC με επαναφορτιζόμενη Charge&Go λειτουργία, Augmented Xperience platform για φυσικό ήχο & streaming.",
+  },
   {
     id: "insio-charge-go",
     name: "Signia Insio Charge&Go",
@@ -114,16 +126,6 @@ export const hearingAidModels: HearingAidModel[] = [
     ],
     description:
       "Επαναφορτιζόμενο CIC/ΙΙC με Charge&Go βάση, έως 20 ώρες αυτονομία, Bluetooth και HD streaming από Signia NX πλατφόρμα ",
-  },
-  {
-    id: "silk-charge-go",
-    name: "Signia Silk Charge&Go IX",
-    type: "rechargeable",
-    images: [
-      "https://aanviihearing.com/image/cache/catalog/web/products/silk/silk-charge-and-go-ix/silk-charge-and-go-ix-hearing-aids-800x800-2000x2000.png",
-    ],
-    description:
-      "Διακριτικό Silk CIC με επαναφορτιζόμενη Charge&Go λειτουργία, Augmented Xperience platform για φυσικό ήχο & streaming.",
   },
   {
     id: "pure-charge-go",

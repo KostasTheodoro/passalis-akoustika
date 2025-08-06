@@ -21,10 +21,10 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const hearingTypesDropdown = [
-  { name: "CIC – Ενδοκαναλικά", href: "/akoustika/cic" },
-  { name: "RIC – Ανοιχτής Εφαρμογής", href: "/akoustika/ric" },
-  { name: "BTE – Οπισθωτιαία", href: "/akoustika/bte" },
-  { name: "Επαναφορτιζόμενα", href: "/akoustika/rechargeable" },
+  { name: "Ενδοκαναλικά - CIC", href: "/akoustika/cic" },
+  { name: "Επαναφορτιζόμενα - Charge&Go", href: "/akoustika/rechargeable" },
+  { name: "Ανοιχτής Εφαρμογής - RIC", href: "/akoustika/ric" },
+  { name: "Οπισθωτιαία - BTE", href: "/akoustika/bte" },
 ];
 
 const navigation = [

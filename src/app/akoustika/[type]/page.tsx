@@ -5,7 +5,7 @@ const typeNames: Record<string, { greek: string; latin: string }> = {
   cic: { greek: "Ενδοκαναλικά", latin: "CIC" },
   ric: { greek: "Ανοιχτής Εφαρμογής", latin: "RIC" },
   bte: { greek: "Οπισθωτιαία", latin: "BTE" },
-  rechargeable: { greek: "Επαναφορτιζόμενα", latin: "Rechargeable" },
+  rechargeable: { greek: "Επαναφορτιζόμενα", latin: "Charge&Go" },
 };
 
 export default async function HearingAidTypePage({
@@ -13,7 +13,7 @@ export default async function HearingAidTypePage({
 }: {
   params: Promise<{ type: string }>;
 }) {
-  const { type } = await params; // <--- await here!
+  const { type } = await params;
   const models = hearingAidModels.filter((m) => m.type === type);
 
   if (!typeNames[type]) {

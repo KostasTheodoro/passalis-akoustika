@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { hearingAidModels } from "@/data/hearingAids";
 
-const hearingTypes = ["cic", "ric", "bte", "rechargeable"];
+const hearingTypes = ["cic", "rechargeable", "ric", "bte"];
 type HearingType = (typeof hearingTypes)[number];
 
 const favorites = hearingTypes
@@ -21,7 +21,7 @@ const favorites = hearingTypes
 
 export function Favorites() {
   return (
-    <section className="mx-auto max-w-7xl px-4 py-16">
+    <section className="mx-auto max-w-6xl px-4 py-16">
       <h2 className="text-3xl font-extrabold text-primary text-center mb-8">
         Τα ακουστικά μας
       </h2>
@@ -37,7 +37,7 @@ export function Favorites() {
               alt={fav.name}
               width={300}
               height={200}
-              className="w-full h-80 object-contain"
+              className="w-full h-60 object-contain"
               unoptimized
               priority
             />
