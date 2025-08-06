@@ -4,7 +4,7 @@ import { Services } from "@/components/ServicesSection";
 import { SigniaApp } from "@/components/SigniaApp";
 export default function Home() {
   return (
-    <main>
+    <main className="">
       <Hero />
       <Services />
       <Favorites />
