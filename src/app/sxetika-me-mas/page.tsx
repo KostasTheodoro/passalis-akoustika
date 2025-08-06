@@ -1,3 +1,12 @@
+"use client";
+
+import Image from "next/image";
+import image1 from "@/app/assets/images/sxetika-me-mas/sxetika-me-mas-1.png";
+import image2 from "@/app/assets/images/sxetika-me-mas/sxetika-me-mas-2.png";
+import image3 from "@/app/assets/images/sxetika-me-mas/sxetika-me-mas-3.png";
+import image4 from "@/app/assets/images/sxetika-me-mas/sxetika-me-mas-4.png";
+import image5 from "@/app/assets/images/sxetika-me-mas/sxetika-me-mas-5.png";
+
 export default function AboutUs() {
   return (
     <div>
@@ -19,33 +28,39 @@ export default function AboutUs() {
               ακουστικό βαρηκοΐας, προσαρμοσμένο στις δικές σας ανάγκες.
             </p>
           </div>
+
           {/* Images side */}
           <div>
             <div className="grid grid-cols-2 grid-rows-2 gap-4">
-              <img
-                src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80"
-                alt="Ακουστικά"
-                className="rounded-xl object-cover w-full h-32 lg:h-36 shadow-lg"
+              <Image
+                src={image1}
+                alt="Ακουστικά 1"
+                placeholder="blur"
+                className="rounded-xl object-cover w-full h-64 lg:h-44 shadow-lg"
               />
-              <img
-                src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80"
-                alt="Ομάδα"
-                className="rounded-xl object-cover w-full h-32 lg:h-36 shadow-lg"
+              <Image
+                src={image2}
+                alt="Ακουστικά 2"
+                placeholder="blur"
+                className="rounded-xl object-cover w-full h-64 lg:h-44 shadow-lg"
               />
-              <img
-                src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=400&q=80"
-                alt="Πελάτης"
-                className="rounded-xl object-cover w-full h-32 lg:h-36 shadow-lg"
+              <Image
+                src={image3}
+                alt="Ακουστικά 3"
+                placeholder="blur"
+                className="rounded-xl object-cover w-full h-64 lg:h-44 shadow-lg"
               />
-              <img
-                src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=400&q=80"
-                alt="Εξοπλισμός"
-                className="rounded-xl object-cover w-full h-32 lg:h-36 shadow-lg"
+              <Image
+                src={image4}
+                alt="Ακουστικά 4"
+                placeholder="blur"
+                className="rounded-xl object-cover w-full h-64 lg:h-44 shadow-lg"
               />
             </div>
           </div>
         </div>
       </section>
+
       {/* Left-aligned text section, with right empty */}
       <section className="mx-auto max-w-7xl px-4 pt-14 pb-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
@@ -67,13 +82,17 @@ export default function AboutUs() {
           <div></div>
         </div>
       </section>
-      {/* Bottom image, aligned with the main container, with some padding above & below */}
+
+      {/* Bottom image */}
       <section className="mx-auto max-w-7xl px-4 pt-4 pb-6">
-        <div className="w-full h-64 lg:h-96 relative">
-          <img
-            src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=1200&q=80"
+        <div className="w-full h-90 lg:h-130 relative">
+          <Image
+            src={image5}
             alt="Χαρούμενοι πελάτες"
-            className="w-full h-full object-cover rounded-2xl shadow-lg"
+            placeholder="blur"
+            className="rounded-2xl shadow-lg object-cover"
+            fill
+            sizes="(min-width: 1024px) 100vw, 100vw"
           />
         </div>
       </section>
