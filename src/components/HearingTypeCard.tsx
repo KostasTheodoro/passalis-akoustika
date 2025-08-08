@@ -15,7 +15,7 @@ export function HearingTypeCard({ type }: { type: HearingType }) {
             src={type.image}
             alt={type.title}
             fill
-            className="rounded-xl object-contain bg-gray-100"
+            className="rounded-xl object-contain"
             unoptimized
             priority
           />
