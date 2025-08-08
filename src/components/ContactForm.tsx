@@ -15,6 +15,7 @@ export default function ContactForm() {
     message: string;
     icon: React.ReactNode;
   } | null>(null);
+  const [sending, setSending] = useState(false);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -33,6 +34,7 @@ export default function ContactForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setSending(true);
 
     setStatus({
       message: "Αποστολή...",
@@ -59,17 +61,25 @@ export default function ContactForm() {
           message: "",
         });
       } else {
+        // Try to read error from API
+        let apiError = "Σφάλμα κατά την αποστολή. Δοκιμάστε ξανά.";
+        try {
+          const data = await res.json();
+          if (data?.error) apiError = data.error;
+        } catch {}
         setStatus({
-          message: "Σφάλμα κατά την αποστολή. Δοκιμάστε ξανά.",
+          message: apiError,
           icon: <FaCircleXmark className="text-red-500 text-2xl" />,
         });
       }
     } catch (error) {
       console.error("Error submitting contact form:", error);
       setStatus({
-        message: "Παρακαλώ συμπληρώστε όλα τα υποχρεωτικά πεδία.",
+        message: "Παρουσιάστηκε σφάλμα. Δοκιμάστε ξανά αργότερα.",
         icon: <FaCircleXmark className="text-red-500 text-2xl" />,
       });
+    } finally {
+      setSending(false);
     }
   };
 
@@ -155,6 +165,7 @@ export default function ContactForm() {
         <button
           type="submit"
           className="inline-block bg-primary text-white font-bold px-8 py-3 rounded-lg text-lg shadow-md hover:bg-white hover:text-primary border-primary border-2 transition-colors duration-200"
+          disabled={sending}
         >
           Αποστολή μηνύματος
         </button>
