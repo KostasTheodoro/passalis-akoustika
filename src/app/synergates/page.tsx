@@ -65,7 +65,7 @@ export default function SynergatesPage() {
         </div>
         <div className="w-full flex justify-center mt-10">
           <Link
-            href="/synergates/providers"
+            href="/synergates/paroxoi"
             className="inline-block border-2 border-primary bg-primary text-white font-bold text-lg px-12 py-4 rounded-full transition-colors duration-200 hover:bg-white hover:text-primary"
           >
             Δείτε λεπτομέρειες

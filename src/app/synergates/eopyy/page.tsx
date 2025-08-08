@@ -14,7 +14,7 @@ export default function EOPYY() {
           className="w-full h-full object-cover"
         />
 
-        <div className="absolute inset-0 bg-primary/15 pointer-events-none" />
+        <div className="absolute inset-0 bg-primary/10 pointer-events-none" />
       </div>
 
       <div className="max-w-6xl mx-auto px-4 py-8 text-center">
