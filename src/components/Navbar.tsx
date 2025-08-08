@@ -1,5 +1,5 @@
 "use client";
-import { Fragment, useState, useRef } from "react";
+import { Fragment, useState, useRef, ReactNode } from "react";
 import {
   Disclosure,
   DisclosureButton,
@@ -46,10 +46,35 @@ function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
 }
 
+interface MobileNavLinkProps {
+  href: string;
+  children: ReactNode;
+  close: () => void;
+  className?: string;
+}
+
+function MobileNavLink({
+  href,
+  children,
+  close,
+  className = "",
+}: MobileNavLinkProps) {
+  return (
+    <Link
+      href={href}
+      className={className}
+      onClick={() => {
+        close();
+      }}
+    >
+      {children}
+    </Link>
+  );
+}
+
 export default function Navbar() {
   const pathname = usePathname();
 
-  // Hover logic for συνεργάτες
   const [isSynergatesOpen, setSynergatesOpen] = useState(false);
   const [isAkoustikaOpen, setAkoustikaOpen] = useState(false);
   const synergatesTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -75,8 +100,7 @@ export default function Navbar() {
     <Disclosure as="nav" className="bg-white border-b sticky top-0 z-50">
       {({ open, close }) => (
         <>
-          <div className="mx-auto max-w-[1980px] px-4  flex h-20 items-center justify-between lg:justify-start gap-2">
-            {/* Mobile menu button */}
+          <div className="mx-auto max-w-[1980px] px-4 flex h-20 items-center justify-between lg:justify-start gap-2">
             <div className="flex lg:hidden">
               <DisclosureButton className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:text-primary hover:bg-gray-100 focus:outline-none">
                 <span className="sr-only">Open main menu</span>
@@ -88,19 +112,19 @@ export default function Navbar() {
               </DisclosureButton>
             </div>
             {/* Logo */}
-            <Link href="/" className="flex items-center  ">
+            <Link href="/" className="flex items-center">
               <Image
                 src="/logo1.svg"
                 alt="Passalis Akoustika Logo"
                 width={65}
                 height={65}
-                className="h-19 w-auto "
+                className="h-19 w-auto"
                 priority
               />
             </Link>
             <div className="w-10 lg:hidden" aria-hidden="true" />
             {/* Desktop nav */}
-            <div className="hidden  lg:flex flex-1 items-center justify-center space-x-8">
+            <div className="hidden lg:flex flex-1 items-center justify-center space-x-8">
               {navigation.map((item) =>
                 item.dropdown ? (
                   <div
@@ -203,17 +227,17 @@ export default function Navbar() {
                 )
               )}
             </div>
-            {/* Contact Info row with icons */}
-            <div className="hidden lg:flex items-center gap-4  ">
+
+            <div className="hidden lg:flex items-center gap-4">
               <a
                 href="tel:2106129896"
-                className="flex items-center gap-1 text-brandgray font-bold hover:text-primary no-underline  transition"
+                className="flex items-center gap-1 text-brandgray font-bold hover:text-primary no-underline transition"
               >
                 <PhoneIcon className="h-5 w-5" aria-hidden="true" />
                 210 612 9896
               </a>
               <a
-                href="https://www.google.com/maps/place/%CE%A0%CE%91%CE%A3%CE%A3%CE%91%CE%9B%CE%97%CE%A3+%CE%97.+-+%CE%91%CE%9A%CE%9F%CE%A5%CE%A3%CE%A4%CE%99%CE%9A%CE%91+%CE%92%CE%91%CE%A1%CE%97%CE%9A%CE%9F%CE%AA%CE%91%CE%A3/@38.0483082,23.807228,17z/data=!3m1!4b1!4m6!3m5!1s0x14a19968f09ee0db:0x121536f50b8e6e2a!8m2!3d38.0483082!4d23.807228!16s%2Fg%2F11xdw04xv9?entry=ttu&g_ep=EgoyMDI1MDYxNS4wIKXMDSoASAFQAw%3D%3D"
+                href="https://www.google.com/maps/place/%CE%A0%CE%91%CE%A3%CE%A3%CE%91%CE%9B%CE%97%CE%A3+%CE%97.+-+%CE%91%CE%9A%CE%9F%CE%A5%CE%A3%CE%A4%CE%99%CE%9A%CE%91+%CE%92%CE%91%CE%A1%CE%97%CE%9A%CE%9F%CE%8A%CE%91%CE%A3/@38.0483082,23.807228,17z/data=!3m1!4b1!4m6!3m5!1s0x14a19968f09ee0db:0x121536f50b8e6e2a!8m2!3d38.0483082!4d23.807228!16s%2Fg%2F11xdw04xv9?entry=ttu&g_ep=EgoyMDI1MDYxNS4wIKXMDSoASAFQAw%3D%3D"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-1 text-brandgray font-bold no-underline hover:text-primary transition"
@@ -223,20 +247,42 @@ export default function Navbar() {
               </a>
             </div>
           </div>
-          {/* Mobile Panel */}
+
           <Transition
             show={open}
+            appear
             as={Fragment}
-            enter="transition duration-200 ease-out"
+            enter="transition-opacity duration-400"
+            enterFrom="opacity-0"
+            enterTo="opacity-100"
+            leave="transition-opacity duration-400"
+            leaveFrom="opacity-100"
+            leaveTo="opacity-0"
+          >
+            <div
+              className="fixed inset-0 z-40 bg-black/30"
+              onClick={() => close()}
+              aria-hidden="true"
+            />
+          </Transition>
+
+          <Transition
+            show={open}
+            appear
+            as={Fragment}
+            enter="transition-transform duration-400"
             enterFrom="-translate-x-full"
             enterTo="translate-x-0"
-            leave="transition duration-150 ease-in"
+            leave="transition-transform duration-400"
             leaveFrom="translate-x-0"
             leaveTo="-translate-x-full"
           >
-            <DisclosurePanel className="lg:hidden fixed inset-0 z-40 bg-white shadow-xl overflow-y-auto">
+            <DisclosurePanel
+              static
+              className="fixed inset-y-0 left-0 z-50 w-[38vw] max-w-xs min-w-[240px] bg-white shadow-xl overflow-y-auto h-full"
+            >
               <div className="px-4 pt-5 pb-2 flex justify-between items-center border-b">
-                <Link href="/" onClick={() => close()}>
+                <MobileNavLink href="/" close={close}>
                   <Image
                     src="/logo1.svg"
                     alt="Passalis Akoustika Logo"
@@ -244,46 +290,48 @@ export default function Navbar() {
                     height={48}
                     className="h-10 w-auto"
                   />
-                </Link>
-                <DisclosureButton className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:text-primary hover:bg-gray-100 focus:outline-none">
-                  <span className="sr-only">Close menu</span>
+                </MobileNavLink>
+
+                <button
+                  type="button"
+                  onClick={() => close()}
+                  className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:text-primary hover:bg-gray-100 focus:outline-none"
+                  aria-label="Close menu"
+                >
                   <XMarkIcon className="h-6 w-6" aria-hidden="true" />
-                </DisclosureButton>
+                </button>
               </div>
               <div className="space-y-1 px-2 pt-4 pb-3">
                 {navigation.map((item) =>
                   item.dropdown ? (
                     <div key={item.name} className="space-y-1">
-                      <DisclosureButton
-                        as={Link}
+                      <MobileNavLink
                         href={item.href}
+                        close={close}
                         className="block rounded-md px-3 py-2 text-base font-medium text-gray-900 hover:text-primary"
-                        onClick={() => close()}
                       >
                         {item.name} (Όλα)
-                      </DisclosureButton>
+                      </MobileNavLink>
                       {item.dropdown.map((drop) => (
-                        <DisclosureButton
-                          as={Link}
+                        <MobileNavLink
                           href={drop.href}
                           key={drop.href}
+                          close={close}
                           className="block rounded-md px-6 py-2 text-base font-medium text-gray-700 hover:text-primary"
-                          onClick={() => close()}
                         >
                           {drop.name}
-                        </DisclosureButton>
+                        </MobileNavLink>
                       ))}
                     </div>
                   ) : (
-                    <DisclosureButton
-                      as={Link}
+                    <MobileNavLink
                       key={item.href}
                       href={item.href}
+                      close={close}
                       className="block rounded-md px-3 py-2 text-base font-medium text-gray-900 hover:text-primary"
-                      onClick={() => close()}
                     >
                       {item.name}
-                    </DisclosureButton>
+                    </MobileNavLink>
                   )
                 )}
               </div>
@@ -296,7 +344,7 @@ export default function Navbar() {
                   210 612 9896
                 </a>
                 <a
-                  href="https://www.google.com/maps/place/%CE%A0%CE%91%CE%A3%CE%A3%CE%91%CE%9B%CE%97%CE%A3+%CE%97.+-+%CE%91%CE%9A%CE%9F%CE%A5%CE%A3%CE%A4%CE%99%CE%9A%CE%91+%CE%92%CE%91%CE%A1%CE%97%CE%9A%CE%9F%CE%AA%CE%91%CE%A3/@38.0483082,23.807228,17z/data=!3m1!4b1!4m6!3m5!1s0x14a19968f09ee0db:0x121536f50b8e6e2a!8m2!3d38.0483082!4d23.807228!16s%2Fg%2F11xdw04xv9?entry=ttu&g_ep=EgoyMDI1MDYxNS4wIKXMDSoASAFQAw%3D%3D"
+                  href="https://www.google.com/maps/place/%CE%A0%CE%91%CE%A3%CE%A3%CE%91%CE%9B%CE%97%CE%A3+%CE%97.+-+%CE%91%CE%9A%CE%9F%CE%A5%CE%A3%CE%A4%CE%99%CE%9A%CE%91+%CE%92%CE%91%CE%A1%CE%97%CE%9A%CE%9F%CE%8A%CE%91%CE%A3/@38.0483082,23.807228,17z/data=!3m1!4b1!4m6!3m5!1s0x14a19968f09ee0db:0x121536f50b8e6e2a!8m2!3d38.0483082!4d23.807228!16s%2Fg%2F11xdw04xv9?entry=ttu&g_ep=EgoyMDI1MDYxNS4wIKXMDSoASAFQAw%3D%3D"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block text-xs text-gray-500 hover:underline"
