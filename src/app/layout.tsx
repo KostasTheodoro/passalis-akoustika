@@ -1,12 +1,11 @@
-import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import "./globals.css";
+import type { Metadata } from "next";
+import Script from "next/script";
+import { defaultMetadata, orgJsonLd, websiteJsonLd } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Ακουστικά Πασσαλής",
-  description: "Ανακάλυψτε τα καλύτερα ακουστικά βαρυκοίας",
-};
+export const metadata: Metadata = defaultMetadata;
 
 export default function RootLayout({
   children,
@@ -19,6 +18,16 @@ export default function RootLayout({
         <Navbar />
         <main>{children}</main>
         <Footer />
+        <Script
+          id="ld-org"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd()) }}
+        />
+        <Script
+          id="ld-website"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd()) }}
+        />
       </body>
     </html>
   );

@@ -1,6 +1,14 @@
 import { ProviderCard, Provider } from "@/components/ProviderCard";
 import { NextPage } from "next";
-
+import { pageMeta, breadcrumbJsonLd } from "@/lib/seo";
+import Script from "next/script";
+export const metadata = pageMeta({
+  title: "Πάροχοι Ακουστικών Βαρηκοΐας | Signia, Siemens, Rexton, A&M",
+  description:
+    "Συνεργαζόμαστε με κορυφαίους οίκους: Signia, Siemens, Rexton, A&M. Καινοτομία, αξιοπιστία και υποστήριξη για κάθε ανάγκη ακοής.",
+  path: "/synergates/paroxoi",
+  keywords: ["Signia", "Siemens", "Rexton", "A&M"],
+});
 const providers: Provider[] = [
   {
     name: "SIGNIA",
@@ -79,16 +87,31 @@ const providers: Provider[] = [
 
 const Paroxoi: NextPage = () => {
   return (
-    <main className="min-h-screen py-14">
-      <div className="max-w-5xl mx-auto px-4">
-        <h1 className="text-4xl md:text-5xl font-extrabold mb-14 text-center text-primary">
-          Πάροχοι Βοηθημάτων Ακοής
-        </h1>
-        {providers.map((provider) => (
-          <ProviderCard key={provider.name} {...provider} />
-        ))}
-      </div>
-    </main>
+    <>
+      <Script
+        id="ld-breadcrumb-paroxoi"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            breadcrumbJsonLd([
+              { name: "Αρχική", path: "/" },
+              { name: "Συνεργάτες", path: "/synergates" },
+              { name: "Πάροχοι", path: "/synergates/paroxoi" },
+            ])
+          ),
+        }}
+      />
+      <main className="min-h-screen py-14">
+        <div className="max-w-5xl mx-auto px-4">
+          <h1 className="text-4xl md:text-5xl font-extrabold mb-14 text-center text-primary">
+            Πάροχοι Βοηθημάτων Ακοής
+          </h1>
+          {providers.map((provider) => (
+            <ProviderCard key={provider.name} {...provider} />
+          ))}
+        </div>
+      </main>
+    </>
   );
 };
 

@@ -1,5 +1,14 @@
-"use client";
-import { useState } from "react";
+import { pageMeta, breadcrumbJsonLd, faqJsonLd } from "@/lib/seo";
+import Script from "next/script";
+import ClientFAQ from "./ClientFAQ";
+
+export const metadata = pageMeta({
+  title: "Συχνές Ερωτήσεις για Ακουστικά Βαρηκοΐας – Πασσάλης",
+  description:
+    "Απαντήσεις σε συχνές ερωτήσεις για ακουστικά βαρηκοΐας: λειτουργία, διάρκεια ζωής, δοκιμή, επιδότηση ΕΟΠΥΥ, εγγύηση, επισκευή, ραντεβού.",
+  path: "/syxnes-erotiseis",
+  keywords: ["συχνές ερωτήσεις", "ακουστικά βαρηκοΐας", "ΕΟΠΥΥ", "εγγύηση"],
+});
 
 const faqs = [
   {
@@ -26,7 +35,6 @@ const faqs = [
     q: "Υπάρχει εγγύηση;",
     a: "Ναι, παρέχουμε διετή εγγύηση συν τη συντήρηση για 3 χρόνια.",
   },
-
   {
     q: "Υπάρχει online υποστήριξη;",
     a: "Μπορείτε πάντα να επικοινωνείτε τηλεφωνικά ή μέσω email για βοήθεια.",
@@ -37,67 +45,32 @@ const faqs = [
   },
   {
     q: "Δέχεστε ραντεβού εκτός ωραρίου;",
-    a: "Ναι, συναρμολογούμε εκτός ωραρίου με ραντεβού για ευκολία.",
+    a: "Ναι, εξυπηρετούμε εκτός ωραρίου με ραντεβού για ευκολία.",
   },
 ];
 
 export default function FAQPage() {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
   return (
-    <section className="max-w-3xl mx-auto pt-16 pb-36 px-4 ">
-      <h1 className="text-4xl font-bold text-center text-primary mb-16">
-        Συχνές Ερωτήσεις
-      </h1>
-      <dl>
-        {faqs.map((item, idx) => (
-          <div
-            key={idx}
-            className={`p-4 border-b transition-colors ${
-              openIndex === idx
-                ? "border-primary"
-                : "border-brandlight hover:border-primary"
-            }`}
-          >
-            <dt>
-              <button
-                type="button"
-                className={` group flex justify-between w-full text-left focus:outline-none transition-colors
-                  ${
-                    openIndex === idx
-                      ? "text-primary"
-                      : "text-brandgray hover:text-primary"
-                  }
-                `}
-                onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
-                aria-expanded={openIndex === idx}
-              >
-                <span className="font-medium text-lg">{item.q}</span>
-                <svg
-                  className={`w-6 h-6 transition-transform duration-200 ${
-                    openIndex === idx
-                      ? "rotate-180 text-primary"
-                      : "text-brandlight group-hover:text-primary"
-                  }`}
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  aria-hidden="true"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M19 9l-7 7-7-7"
-                  />
-                </svg>
-              </button>
-            </dt>
-            {openIndex === idx && (
-              <dd className="mt-2 text-brandgray">{item.a}</dd>
-            )}
-          </div>
-        ))}
-      </dl>
-    </section>
+    <>
+      <Script
+        id="ld-breadcrumb-faq"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            breadcrumbJsonLd([
+              { name: "Αρχική", path: "/" },
+              { name: "Συχνές Ερωτήσεις", path: "/syxnes-erotiseis" },
+            ])
+          ),
+        }}
+      />
+      <Script
+        id="ld-faq"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd(faqs)) }}
+      />
+
+      <ClientFAQ faqs={faqs} />
+    </>
   );
 }
