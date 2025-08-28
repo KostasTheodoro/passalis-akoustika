@@ -1,39 +1,32 @@
+// app/akoustika/[type]/page.tsx
 import { hearingAidModels } from "@/data/hearingAids";
 import { HearingAidModelCard } from "@/components/HearingAidModelCard";
-import { Metadata } from "next";
+import type { Metadata } from "next";
 import { pageMeta, breadcrumbJsonLd } from "@/lib/seo";
 import Script from "next/script";
 
-const typeNames: Record<
-  string,
-  { greek: string; latin: string; desc: string }
-> = {
-  cic: {
-    greek: "Ενδοκαναλικά",
-    latin: "CIC",
-    desc: "Σχεδόν αόρατα ακουστικά που εφαρμόζουν βαθιά στο κανάλι. Ιδανικά για διακριτική εμφάνιση με φυσικό ήχο.",
-  },
-  ric: {
-    greek: "Ανοιχτής Εφαρμογής",
-    latin: "RIC",
-    desc: "Άνεση και υψηλή απόδοση με φυσική μεταφορά ήχου. Διακριτικός σχεδιασμός και εξατομικευμένη ρύθμιση.",
-  },
-  bte: {
-    greek: "Οπισθωτιαία",
-    latin: "BTE",
-    desc: "Ανθεκτικά και ισχυρά για κάθε επίπεδο απώλειας. Εύχρηστα, αξιόπιστα και κατάλληλα για καθημερινή χρήση.",
-  },
-  rechargeable: {
-    greek: "Επαναφορτιζόμενα",
-    latin: "Charge&Go",
-    desc: "Τέλος στις μπαταρίες μίας χρήσης. Επαναφορτιζόμενα ακουστικά με ευκολία και οικολογική χρήση.",
-  },
+const typeNames: Record<string, { greek: string; latin: string }> = {
+  cic: { greek: "Ενδοκαναλικά", latin: "CIC" },
+  ric: { greek: "Ανοιχτής Εφαρμογής", latin: "RIC" },
+  bte: { greek: "Οπισθωτιαία", latin: "BTE" },
+  rechargeable: { greek: "Επαναφορτιζόμενα", latin: "Charge&Go" },
 };
 
-type Props = { params: { type: string } };
+const typeDescs: Record<string, string> = {
+  cic: "Σχεδόν αόρατα ακουστικά που εφαρμόζουν βαθιά στο κανάλι. Ιδανικά για διακριτική εμφάνιση με φυσικό ήχο.",
+  ric: "Άνεση και υψηλή απόδοση με φυσική μεταφορά ήχου. Διακριτικός σχεδιασμός και εξατομικευμένη ρύθμιση.",
+  bte: "Ανθεκτικά και ισχυρά για κάθε επίπεδο απώλειας. Εύχρηστα, αξιόπιστα και κατάλληλα για καθημερινή χρήση.",
+  rechargeable:
+    "Τέλος στις μπαταρίες μίας χρήσης. Επαναφορτιζόμενα ακουστικά με ευκολία και οικολογική χρήση.",
+};
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const type = params.type;
+type RouteParams = { params: { type: string } };
+
+export async function generateMetadata({
+  params,
+}: RouteParams): Promise<Metadata> {
+  const { type } = params;
+
   if (!typeNames[type]) {
     return pageMeta({
       title: "Ακουστικά Βαρηκοΐας – Πασσάλης Ακουστικά",
@@ -42,7 +35,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     });
   }
 
-  const { greek, latin, desc } = typeNames[type];
+  const { greek, latin } = typeNames[type];
+  const desc = typeDescs[type] ?? "Ακουστικά βαρηκοΐας υψηλής ποιότητας.";
+
   return pageMeta({
     title: `${greek} (${latin}) Ακουστικά Βαρηκοΐας – Πασσάλης`,
     description: desc,
@@ -51,11 +46,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   });
 }
 
-export default async function HearingAidTypePage({
-  params,
-}: {
-  params: { type: string };
-}) {
+export default function HearingAidTypePage({ params }: RouteParams) {
   const { type } = params;
   const models = hearingAidModels.filter((m) => m.type === type);
 
