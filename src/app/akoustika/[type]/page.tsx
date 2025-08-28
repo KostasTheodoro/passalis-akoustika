@@ -5,7 +5,6 @@ import type { Metadata } from "next";
 import { pageMeta, breadcrumbJsonLd } from "@/lib/seo";
 import Script from "next/script";
 
-// your original map (unchanged)
 const typeNames: Record<string, { greek: string; latin: string }> = {
   cic: { greek: "Ενδοκαναλικά", latin: "CIC" },
   ric: { greek: "Ανοιχτής Εφαρμογής", latin: "RIC" },
@@ -13,7 +12,6 @@ const typeNames: Record<string, { greek: string; latin: string }> = {
   rechargeable: { greek: "Επαναφορτιζόμενα", latin: "Charge&Go" },
 };
 
-// lightweight descriptions purely for SEO
 const typeDescs: Record<string, string> = {
   cic: "Σχεδόν αόρατα ακουστικά που εφαρμόζουν βαθιά στο κανάλι. Ιδανικά για διακριτική εμφάνιση με φυσικό ήχο.",
   ric: "Άνεση και υψηλή απόδοση με φυσική μεταφορά ήχου. Διακριτικός σχεδιασμός και εξατομικευμένη ρύθμιση.",

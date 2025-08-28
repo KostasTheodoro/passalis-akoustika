@@ -9,7 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/akoustika/cic",
     "/akoustika/ric",
     "/akoustika/bte",
-    "/akoustika/charge-go",
+    "/akoustika/rechargeable",
     "/sxetika-me-mas",
     "/syxnes-erotiseis",
     "/epikoinonia",

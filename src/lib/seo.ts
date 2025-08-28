@@ -1,10 +1,9 @@
-// src/lib/seo.ts
 import type { Metadata } from "next";
 
 export const SITE = {
   name: "Πασσάλης Ακουστικά",
   legalName: "Passalis Hearing Aids",
-  url: "https://passalis-akoustika.vercel.app",
+  url: "https://passalis-akoustika.gr",
   locale: "el_GR",
   telephone: "+30 210 612 9896",
   email: "info@passalis-akoustika.gr",
@@ -45,7 +44,6 @@ export const defaultMetadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    site: "@",
   },
   robots: { index: true, follow: true, nocache: false },
   icons: { icon: SITE.logo },
@@ -65,7 +63,7 @@ export function pageMeta({
   keywords?: string[];
 }): Metadata {
   const url = absoluteUrl(path);
-  const ogImage = image || SITE.ogImage;
+  const ogImage = image ? absoluteUrl(image) : absoluteUrl(SITE.ogImage);
   return {
     title,
     description,
@@ -163,10 +161,10 @@ export const TYPE_META: Record<
       "Ανθεκτικά και ισχυρά για κάθε επίπεδο απώλειας. Εύχρηστα, αξιόπιστα και κατάλληλα για καθημερινή χρήση.",
     path: "/akoustika/bte",
   },
-  "charge-go": {
+  rechargeable: {
     title: "Επαναφορτιζόμενα Ακουστικά – Χωρίς μπαταρίες",
     description:
       "Τέλος στις μπαταρίες μίας χρήσης. Επαναφορτιζόμενα ακουστικά με ευκολία και οικολογική χρήση.",
-    path: "/akoustika/charge-go",
+    path: "/akoustika/rechargeable",
   },
 };
