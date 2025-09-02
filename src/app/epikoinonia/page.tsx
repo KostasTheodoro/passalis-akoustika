@@ -8,7 +8,7 @@ import { pageMeta, breadcrumbJsonLd, contactJsonLd } from "@/lib/seo";
 import Script from "next/script";
 
 export const metadata = pageMeta({
-  title: "Επικοινωνία – Πασσαλλής Ακουστικά Μαρούσι",
+  title: "Επικοινωνία – Πασσαλής Ακουστικά Μαρούσι",
   description:
     "Επικοινωνήστε με μαζί μας. Τηλέφωνο 210 612 9896, email  akoustika.passalis@gmail.com. Κλείστε δωρεάν έλεγχο ακοής.",
   path: "/epikoinonia",
