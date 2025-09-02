@@ -4,7 +4,7 @@ import { pageMeta, breadcrumbJsonLd } from "@/lib/seo";
 import Script from "next/script";
 
 export const metadata = pageMeta({
-  title: "Συνεργάτες – ΕΟΠΥΥ & Πάροχοι | Πασσάλης Ακουστικά",
+  title: "Συνεργάτες – ΕΟΠΥΥ & Πάροχοι | Πασσαλής Ακουστικά",
   description:
     "Ενημερωθείτε για επιδότηση ΕΟΠΥΥ και δείτε τους επίσημους παρόχους ακουστικών βαρηκοΐας (Signia, Siemens, Rexton, A&M).",
   path: "/synergates",

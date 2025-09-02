@@ -3,7 +3,7 @@ import Script from "next/script";
 import ClientFAQ from "./ClientFAQ";
 
 export const metadata = pageMeta({
-  title: "Συχνές Ερωτήσεις για Ακουστικά Βαρηκοΐας – Πασσάλης",
+  title: "Συχνές Ερωτήσεις για Ακουστικά Βαρηκοΐας – Πασσαλής",
   description:
     "Απαντήσεις σε συχνές ερωτήσεις για ακουστικά βαρηκοΐας: λειτουργία, διάρκεια ζωής, δοκιμή, επιδότηση ΕΟΠΥΥ, εγγύηση, επισκευή, ραντεβού.",
   path: "/syxnes-erotiseis",

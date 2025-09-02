@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 
 export const SITE = {
-  name: "Πασσάλης Ακουστικά",
+  name: "Πασσαλής Ακουστικά",
   legalName: "Passalis Hearing Aids",
   url: "https://passalis-akoustika.gr",
   locale: "el_GR",
   telephone: "+30 210 612 9896",
-  email: "info@passalis-akoustika.gr",
+  email: "akoustika.passalis@gmail.com",
   streetAddress: "Δολιανής 74 & Λεωφ. Κηφισίας 127",
   addressLocality: "Μαρούσι",
   postalCode: "151 24",
@@ -20,8 +20,8 @@ export const absoluteUrl = (path = "/") => new URL(path, SITE.url).toString();
 export const defaultMetadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: {
-    default: "Ακουστικά Βαρηκοΐας στο Μαρούσι – Πασσάλης Ακουστικά",
-    template: "%s | Πασσάλης Ακουστικά",
+    default: "Ακουστικά Βαρηκοΐας στο Μαρούσι – Πασσαλής Ακουστικά",
+    template: "%s | Πασσαλής Ακουστικά",
   },
   description:
     "Δωρεάν έλεγχος ακοής, εξατομικευμένη εφαρμογή και πλήρη υποστήριξη. Ακουστικά βαρηκοΐας στο Μαρούσι με συμμετοχή ΕΟΠΥΥ 450€.",

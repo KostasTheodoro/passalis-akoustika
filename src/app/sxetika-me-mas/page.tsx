@@ -8,7 +8,7 @@ import image4 from "@/app/assets/images/sxetika-me-mas/sxetika-me-mas-4.png";
 import image5 from "@/app/assets/images/sxetika-me-mas/sxetika-me-mas-5.png";
 
 export const metadata = pageMeta({
-  title: "Σχετικά με μας – Πασσάλης Ακουστικά Μαρούσι",
+  title: "Σχετικά με μας – Πασσαλής Ακουστικά Μαρούσι",
   description:
     "Η ομάδα μας βελτιώνει την καθημερινότητά σας με σύγχρονες λύσεις ακοής και φροντίδα με σεβασμό και επαγγελματισμό.",
   path: "/sxetika-me-mas",

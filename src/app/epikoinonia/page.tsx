@@ -8,9 +8,9 @@ import { pageMeta, breadcrumbJsonLd, contactJsonLd } from "@/lib/seo";
 import Script from "next/script";
 
 export const metadata = pageMeta({
-  title: "Επικοινωνία – Πασσάλης Ακουστικά Μαρούσι",
+  title: "Επικοινωνία – Πασσαλλής Ακουστικά Μαρούσι",
   description:
-    "Επικοινωνήστε με Πασσάλης Ακουστικά στο Μαρούσι. Τηλέφωνο 210 612 9896, email info@passalis-akoustika.gr. Κλείστε δωρεάν έλεγχο ακοής.",
+    "Επικοινωνήστε με μαζί μας. Τηλέφωνο 210 612 9896, email  akoustika.passalis@gmail.com. Κλείστε δωρεάν έλεγχο ακοής.",
   path: "/epikoinonia",
   keywords: ["επικοινωνία", "ραντεβού", "Μαρούσι", "ακουστικά βαρηκοΐας"],
 });
@@ -79,10 +79,10 @@ export default function Epikoinonia() {
                   aria-hidden="true"
                 />
                 <a
-                  href="mailto:info@passalis-akoustika.gr"
+                  href="mailto:akoustika.passalis@gmail.com"
                   className="hover:text-primary text-brandgray transition-colors"
                 >
-                  info@passalis-akoustika.gr
+                  akoustika.passalis@gmail.com
                 </a>
               </div>
             </dl>
@@ -103,7 +103,7 @@ export default function Epikoinonia() {
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
             className="rounded-xl shadow-lg border border-primary/30"
-            title="Χάρτης Πασσάλης Ακουστικά"
+            title="Χάρτης Πασσαλής Ακουστικά"
           />
         </section>
       </div>

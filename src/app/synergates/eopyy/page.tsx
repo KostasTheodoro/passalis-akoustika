@@ -3,7 +3,7 @@ import Image from "next/image";
 import { pageMeta, breadcrumbJsonLd } from "@/lib/seo";
 import Script from "next/script";
 export const metadata = pageMeta({
-  title: "ΕΟΠΥΥ – Συμμετοχή & Αποζημίωση Ακουστικών | Πασσάλης",
+  title: "ΕΟΠΥΥ – Συμμετοχή & Αποζημίωση Ακουστικών | Πασσαλής",
   description:
     "Πώς καλύπτει ο ΕΟΠΥΥ 450€ (540€ για παιδιά) για ακουστικά βαρηκοΐας. Δικαιολογητικά, διαδικασία και τι πληρώνετε ως συμμετοχή.",
   path: "/synergates/eopyy",

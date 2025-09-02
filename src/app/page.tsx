@@ -7,7 +7,7 @@ import { pageMeta, breadcrumbJsonLd } from "@/lib/seo";
 import Script from "next/script";
 
 export const metadata = pageMeta({
-  title: "Ακουστικά Βαρηκοΐας στο Μαρούσι – Πασσάλης Ακουστικά",
+  title: "Ακουστικά Βαρηκοΐας στο Μαρούσι – Πασσαλής Ακουστικά",
   description:
     "Δωρεάν έλεγχος ακοής, εξατομικευμένη εφαρμογή και πλήρη υποστήριξη μετά την αγορά. Ακουστικά βαρηκοΐας στο Μαρούσι με συμμετοχή ΕΟΠΥΥ 450€.",
   path: "/",

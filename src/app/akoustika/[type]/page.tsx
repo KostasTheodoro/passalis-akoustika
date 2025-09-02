@@ -30,7 +30,7 @@ export async function generateMetadata({
 
   if (!typeNames[type]) {
     return pageMeta({
-      title: "Ακουστικά Βαρηκοΐας – Πασσάλης Ακουστικά",
+      title: "Ακουστικά Βαρηκοΐας – Πασσαλής Ακουστικά",
       description: "Λύσεις ακουστικών βαρηκοΐας για κάθε ανάγκη.",
       path: `/akoustika/${type}`,
     });
@@ -40,7 +40,7 @@ export async function generateMetadata({
   const desc = typeDescs[type] ?? "Ακουστικά βαρηκοΐας υψηλής ποιότητας.";
 
   return pageMeta({
-    title: `${greek} (${latin}) Ακουστικά Βαρηκοΐας – Πασσάλης`,
+    title: `${greek} (${latin}) Ακουστικά Βαρηκοΐας – Πασσαλής`,
     description: desc,
     path: `/akoustika/${type}`,
     keywords: ["ακουστικά βαρηκοΐας", greek, latin, "Μαρούσι"],
