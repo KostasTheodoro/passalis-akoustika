@@ -12,7 +12,7 @@ export const SITE = {
   postalCode: "151 24",
   countryCode: "GR",
   ogImage: "/og/default.jpg",
-  logo: "/favicon.ico",
+  logo: "/logo1.svg",
 };
 
 export const absoluteUrl = (path = "/") => new URL(path, SITE.url).toString();
@@ -46,7 +46,6 @@ export const defaultMetadata: Metadata = {
     card: "summary_large_image",
   },
   robots: { index: true, follow: true, nocache: false },
-  icons: { icon: SITE.logo },
 };
 
 export function pageMeta({
