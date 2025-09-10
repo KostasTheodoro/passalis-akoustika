@@ -18,7 +18,6 @@ export default function RootLayout({
   return (
     <html lang="el">
       <head>
-        {" "}
         <meta name="msvalidate.01" content="7052D126EF24449A4DF24841FFCD2A38" />
         <Script
           id="ld-org"
