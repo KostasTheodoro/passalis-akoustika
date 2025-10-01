@@ -13,18 +13,13 @@ export const SITE = {
   countryCode: "GR",
   ogImage: "/og/default.jpg",
   logo: "/logo1.svg",
-  favicon: "/favicon.ico",
 };
 
 export const absoluteUrl = (path = "/") => new URL(path, SITE.url).toString();
 
 export const defaultMetadata: Metadata = {
   metadataBase: new URL(SITE.url),
-  icons: {
-    icon: SITE.favicon,
-    shortcut: SITE.favicon,
-    apple: "/apple-touch-icon.png",
-  },
+
   title: {
     default: "Ακουστικά Βαρηκοΐας στο Μαρούσι – Πασσαλής Ακουστικά",
     template: "%s | Πασσαλής Ακουστικά",
