@@ -19,6 +19,9 @@ export default function RootLayout({
     <html lang="el">
       <head>
         <meta name="msvalidate.01" content="7052D126EF24449A4DF24841FFCD2A38" />
+        <link rel="icon" type="image/x-icon" href="/icon.ico" />
+        <link rel="shortcut icon" type="image/x-icon" href="/icon.ico" />
+        <link rel="icon" type="image/x-icon" sizes="48x48" href="/icon.ico" />
         <Script
           id="ld-org"
           type="application/ld+json"
